@@ -12,10 +12,12 @@ Instashout was created to showcase Firebase Hosting, Firebase Real-time DB and F
 
 ## Instructions
 
-1. Update firebase.json with your Firebase App ID
-2. Add functionality to index.html
-3. Using the Firebase CLI:
+0. Create a new application from the [Firebase Console](https://console.firebase.google.com)
+1. Add functionality to index.html
+2. Using the Firebase CLI:
+	- firebase login
 	- firebase init
+	- firebase use YOUR_APP_ID
 	- firebase deploy
-4. Access the app from YOUR_APP_ID.firebaseapp.com
-5. Celebrate!
+3. Access the app from YOUR_APP_ID.firebaseapp.com
+4. Celebrate!
