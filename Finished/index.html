@@ -1,0 +1,75 @@
+<html>
+<head>
+  <style>
+    body {
+      max-width: 800px;
+    }
+
+    ul#chat-buffer {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul#chat-buffer li:nth-child(even) {
+      background-color: #EEE;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+  <script>
+    $(document).ready(function () {
+      var ref = new Firebase("https://INSERT_APPID_HERE.firebaseio.com/");
+
+      $("#submit").click(function () {
+        if (currentUser == null) {
+          alert("Please login first!");
+          return;
+        }
+
+        var message = $("#message").val();
+
+        ref.child("messages").push({
+          username: currentUser.github.username,
+          message: message
+        });
+      });
+
+      ref.child("messages").on("child_added", function (snapshot) {
+        var value = snapshot.val();
+        var html = $("<li/>").text(value.username + " said " + value.message);
+        $("#chat-buffer").append(html);
+      });
+
+      // Authentication Components
+      var currentUser;
+      $("#login").click(function () {
+        ref.authWithOAuthPopup("github", function(error, authData) {
+          if (error) {
+            // An error occurred while attempting login
+            console.log(error);
+          } else if (authData) {
+            // User successfully authenticated with Firebase
+            console.log("User ID: " + authData.uid + ", Provider: " + authData.provider);
+            $("input").show();
+            $("#login").hide();
+            currentUser = authData;
+
+          } else {
+            // User is logged out
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+<ul id="chat-buffer">
+</ul>
+
+<hr>
+<button id="login">Login with GitHub</button>
+<input style="display: none;" id="message" placeholder="Message" type="text">
+<input style="display: none;" type="submit" id="submit" value="Send">
+</body>
+</html>

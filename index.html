@@ -1,0 +1,33 @@
+<html>
+<head>
+  <style>
+    body {
+      max-width: 800px;
+    }
+
+    ul#chat-buffer {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul#chat-buffer li:nth-child(even) {
+      background-color: #EEE;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.1.1/firebase.js"></script>
+  <script>
+    // Now that Firebase is included, add all application logic here!
+  </script>
+</head>
+<body>
+
+<ul id="chat-buffer">
+</ul>
+
+<hr>
+<input id="username" placeholder="Username" type="text">
+<input id="message" placeholder="Message" type="text">
+<input type="submit" id="submit" value="Send">
+</body>
+</html>

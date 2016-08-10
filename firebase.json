@@ -1,0 +1,9 @@
+{
+  "firebase": "INSERT_APPID_HERE",
+  "public": "./",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
