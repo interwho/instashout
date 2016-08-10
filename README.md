@@ -2,12 +2,11 @@
 
 Instashout is a simple, public microblogging site that allows users to broadcast messages to the world.
 
-Instashout was created to showcase Firebase Hosting, Firebase Real-time DB and Firebase Authentication as part of the CIBC Live Labs Firebase Lunch &amp; Learn.
+Instashout was created to showcase Firebase Hosting and Firebase Real-time DB as part of the CIBC Live Labs Firebase Lunch &amp; Learn.
 
 ## What's Here
 
-- [`index.html`](/index.html) - The starting point: an HTML template
-- [`Skeletons`](/Skeletons) - Partially completed app skeletons, each with different levels of Firebase functionality
+- [`index.html`](/index.html) - The starting point: An HTML template
 - [`Finished`](/Finished) - The completed app
 
 ## Instructions
