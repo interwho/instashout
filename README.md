@@ -16,7 +16,6 @@ Instashout was created to showcase Firebase Hosting, Firebase Real-time DB and F
 1. Add functionality to index.html
 2. Using the Firebase CLI:
 	- firebase login
-	- firebase init
 	- firebase use YOUR_APP_ID
 	- firebase deploy
 3. Access the app from YOUR_APP_ID.firebaseapp.com
